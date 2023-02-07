@@ -1,0 +1,249 @@
+:root{
+    --Soft-Orange-: 35, 77%, 62%;
+    --Soft-Red-: 5, 85%, 63%;
+    --Off-White-: 36, 100%, 99%;
+    --Grayish-Blue-: 233, 8%, 79%;
+    --Dark-Grayish-Blue-: 236, 13%, 42%;
+    --Very-Dark-Blue-: 240, 100%, 5%;
+}
+
+@font-face {
+    font-family: customfont;
+    src: url('./assets/fonts/static/Inter-Bold.ttf');
+}
+@font-face {
+    font-family: customfont2;
+    src: url('./assets/fonts/static/Inter-Regular.ttf');
+}
+
+*{
+    font-family: customfont2;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+}
+
+.container{
+    max-width: 100vw;
+    min-height: 100vh;
+    padding: 50px 150px;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+nav > img{
+    display: none;
+}
+nav .links a{
+    color: hsl(var(--Dark-Grayish-Blue-));
+    margin-left: 20px;
+    font-size: 15px;
+    text-decoration: none;
+}
+nav .links a:hover{
+    color: hsl(var(--Soft-Red-));
+}
+
+.body{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.body .left{
+    flex-basis: 70%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.body .left .up{
+    width: 100%;
+    margin-bottom: 15px;
+}
+.up img{
+    width: 100%;
+}
+.down{
+    flex-basis: 100%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.down .header{
+    flex-basis: 45%;
+}
+.header h1{
+    font-family: customfont;
+    font-size: 52px;
+}
+.down .desc{
+    flex-basis: 50%;
+}
+.desc p{
+    color: hsl(var(--Dark-Grayish-Blue-));
+    line-height: 24px;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+.desc button{
+    background: hsl(var(--Soft-Red-));
+    cursor: pointer;
+    border: 0;
+    padding: 7px 20px;
+}
+.desc button:hover{
+    background: hsl(var(--Very-Dark-Blue-));
+}
+.desc a{
+    color: hsl(var(--Off-White-));
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 4px;
+}
+.body .right{
+    flex-basis: 25%;
+    background: hsl(var(--Very-Dark-Blue-));
+    padding: 25px 20px;
+    align-self: flex-start;
+}
+.right h2{
+    color: hsl(var(--Soft-Orange-));
+    margin-bottom: 40px;
+}
+.sect{
+    margin-bottom: 30px;
+    border-bottom: 1px solid hsl(var(--Dark-Grayish-Blue-));
+    padding-bottom: 30px;
+}
+.sect:nth-child(4){
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+.sect a{
+    color: hsl(var(--Off-White-));
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+.sect a:hover{
+    color: hsl(var(--Soft-Orange-));
+}
+.sect p{
+    color: hsl(var(--Dark-Grayish-Blue-));
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.box{
+    flex-basis: 30%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box .img{
+    flex-basis: 25%;
+}
+.img img{
+    width: 100%;
+}
+.box .text{
+    flex-basis: 70%;
+}
+.text h3{
+    color: hsl(var(--Dark-Grayish-Blue-));
+    font-weight: 600;
+    font-family: customfont;
+    opacity: 0.5;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+.text a{
+    color: hsl(var(--Very-Dark-Blue-));
+    text-decoration: none;
+    font-family: customfont;
+    font-size: 15px;
+}
+.text a:hover{
+    color: hsl(var(--Soft-Red-));
+}
+.text p{
+    color: hsl(var(--Dark-Grayish-Blue-));
+    font-size: 14px;
+    line-height: 18px;
+    margin-top: 10px;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 768px){
+    .container{
+        padding: 20px;
+        position: relative;
+    }
+    nav > img{
+        display: block;
+        z-index: 23;
+    }
+    .body{
+        flex-direction: column;
+    }
+    .down{
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    .right{
+        flex-basis: 100%;
+    }
+    .footer{
+        flex-direction: column;
+    }
+    .box{
+        margin-bottom: 15px;
+        flex-basis: 100%;
+    }
+
+    .links{
+        display: none;
+        background-color: #00000083;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .hideNav{
+        display: flex;
+    }
+    .bg{
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        padding: 100px 20px;
+        background-color: #fff;
+        width: 65%;
+        height: 100%;
+    }
+    .links a{
+        font-size: 18px;
+        margin: 20px 0;
+        color: hsl(var(--Very-Dark-Blue-));
+    }
+}
